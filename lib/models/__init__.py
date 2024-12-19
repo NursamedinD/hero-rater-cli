@@ -20,7 +20,7 @@ CREATES TABLES IF NOT EXISTS review (
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    hero_id INTEGER NOT NULL,
                    rating INTERG NOT NULL CHECK(rating between 1 and 10),
-                   FOREIGN KEY (hero_id) refrences heroes(id)
+                   FOREIGN KEY (hero_id) refrences heroes(id) 
                    )
                    ''')
     
