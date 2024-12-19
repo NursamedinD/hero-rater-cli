@@ -1,4 +1,4 @@
-from __init__ import CONN, CURSOR, DATABASE_FILE
+from __init__ import CONN, CURSOR
 
 class Review:
     def __init__(self, id, hero_id, rating):
