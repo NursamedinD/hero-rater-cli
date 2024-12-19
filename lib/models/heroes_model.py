@@ -26,12 +26,12 @@ class Hero:
         return CURSOR.fetchall()
     
     @classmethod
-    def find_by_id(cls):
+    def find_by_id(cls, hero_id):
         CURSOR.execute("SELECT * FROM heroes WHERE id = ?", (hero_id,))
         return CURSOR.fetchone()
     
     @classmethod
-    def delete_hero(cls):
+    def delete_hero(cls, hero_id):
         CURSOR.execute("DELETE FROM heroes WHERE id = ?", (hero_id,))
         CONN.commit()
         print(f"Hero with ID {hero_id} has been deleted.")
