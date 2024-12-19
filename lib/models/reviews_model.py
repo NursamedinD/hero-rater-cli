@@ -16,7 +16,7 @@ class Review:
         print(f"Review added successfully for Hero ID {hero_id}.")
 
     @classmethod
-    def get_all_reviews(cls):
-        CURSOR.execute("SELECT * FROM reviews")
+    def get_reviews_for_hero(cls, hero_id):
+        CURSOR.execute("SELECT * FROM reviews WHERE hero_id = ?", (hero_id,))
         return CURSOR.fetchall()
     

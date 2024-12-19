@@ -1,9 +1,7 @@
 # lib/helpers.py
 
-def helper_1():
-    print("Performing useful function#1.")
-
-
-def exit_program():
-    print("Goodbye!")
-    exit()
+def check_rating(rating):
+    if rating.isdigit():
+        rating = int(rating)
+        return 1 <= rating <= 10
+    return False
