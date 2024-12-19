@@ -1,4 +1,3 @@
-import sqlite3
 from __init__ import CONN, CURSOR, DATABASE_FILE
 
 class Review:
@@ -13,7 +12,7 @@ class Review:
             "INSERT INTO reviews (hero_id, rating) VALUES (?, ?)",
             (hero_id, rating)
         )
-        CONN.commit
+        CONN.commit()
         print(f"Review added successfully for Hero ID {hero_id}.")
 
     @classmethod
