@@ -5,24 +5,25 @@ DATABASE_FILE = 'database.db'
 CONN = sqlite3.connect(DATABASE_FILE)
 CURSOR = CONN.cursor()
 
-def database():
+def database_init():
     CURSOR.execute('''
-CREATE TABLES IF NOT EXISTS heroes (
+CREATE TABLE IF NOT EXISTS heroes (
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name TEXT NOT NULL,
                    power TEXT NOT NULL,
                    origin TEXT NOT NULL
                    )
-                   ''')
+                ''')
     
     CURSOR.execute('''
-CREATES TABLES IF NOT EXISTS review (
+CREATE TABLE IF NOT EXISTS review (
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    hero_id INTEGER NOT NULL,
-                   rating INTERG NOT NULL CHECK(rating between 1 and 10),
-                   FOREIGN KEY (hero_id) refrences heroes(id) 
+                   rating INTEGER NOT NULL CHECK(rating BETWEEN 1 AND 10),
+                   FOREIGN KEY (hero_id) REFERENCES heroes(id) 
                    )
-                   ''')
+                ''')
     
 CONN.commit()
-CONN.close()
+
+database_init()
