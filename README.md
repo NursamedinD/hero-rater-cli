@@ -47,7 +47,7 @@ To run the CLI, type into your terminal in VS code:
 
 Here I will explain what each option does:
 
-1. Add a new Hero
+# 1. Add a new Hero
 
 By pressing "1" and then Enter you will be prompted with the following:
 
@@ -59,7 +59,7 @@ By pressing "1" and then Enter you will be prompted with the following:
 
 One done you will be told your Hero has been added successfully
 
-2. View Heroes List
+# 2. View Heroes List
 
 By pressing "2" and then Enter, you will be show a list (depending how many heroes you have added) which will display:
 
@@ -68,7 +68,7 @@ By pressing "2" and then Enter, you will be show a list (depending how many hero
 - Their Power
 - Their Origin
 
-3. Add a review for a hero
+# 3. Add a review for a hero
 
 By pressing "3" and then Enter, you will be given the ability to give your hero a rating out of 10, to do so you first need to:
 
@@ -77,20 +77,20 @@ By pressing "3" and then Enter, you will be given the ability to give your hero 
 - Enter the ID of your desired Hero you want to rate.
 - You are then prompted to enter a rating of 1 (being the lowest) and 10 (being the highest), also note you can only put in a rating of in between 1 or 10 or else the CLI wont accept it.
 
-4. View all reviews for heroes
+# 4. View all reviews for heroes
 
 By pressing "4" and then Enter, you can view the review you have entered for your desired hero, to do so:
 - Remember the ID of your desired hero (if you need reminding, make sure to pick option 2 before going into option 4)
 - Enter the ID of the hero you want and you will see the rating displayed above the options
 
-5. Delete a Hero
+# 5. Delete a Hero
 
 By pressing "5" and then Enter, you can delete the hero you no longer want, to do so:
 - Press "5" and then Enter, your heroes will then be listed as well as showing you the ID of all heroes
 - Enter the ID of the hero based off the ID given and then hit Enter
 - To check if it has been removed, press option 2 and it should say "No Heroes found"
 
-6. Delete a Review
+# 6. Delete a Review
 
 By pressing "6" and then Enter, you can delete the rating you have given your hero, to do so:
 - Press "6" and then Enter
@@ -98,7 +98,7 @@ By pressing "6" and then Enter, you can delete the rating you have given your he
 - A review ID will be displayed for the selected hero ID you chose, type it into the prompt "Enter Review ID to delete: "
 - To check if it worked, enter "4" and then press Enter to view all reviews, type in the Hero's ID and see if the review has been cleared
 
-7. Exit
+# 7. Exit
 
 By pressing "7" and then Enter you will be taken out of the CLI returning you to your terminal
 
