@@ -17,7 +17,6 @@ class Hero:
             (name, power, origin)
         )
         CONN.commit()
-        print(f"Hero '{name}' added successfully!")
 
 
     @classmethod

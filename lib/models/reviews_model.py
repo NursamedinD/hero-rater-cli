@@ -14,7 +14,6 @@ class Review:
             (hero_id, rating)
         )
         CONN.commit()
-        print(f"Review added successfully for Hero ID {hero_id}.")
 
     @classmethod
     def get_reviews_for_hero(cls, hero_id):
