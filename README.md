@@ -1,3 +1,1 @@
 ## Hero Rater CLI
-
-
