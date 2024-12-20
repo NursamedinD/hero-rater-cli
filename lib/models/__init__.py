@@ -1,6 +1,6 @@
 import sqlite3
 
-DATABASE_FILE = 'database.db'
+DATABASE_FILE = 'hero_database.db'
 
 CONN = sqlite3.connect(DATABASE_FILE)
 CURSOR = CONN.cursor()
@@ -16,11 +16,11 @@ CREATE TABLE IF NOT EXISTS heroes (
                 ''')
     
     CURSOR.execute('''
-CREATE TABLE IF NOT EXISTS review (
+CREATE TABLE IF NOT EXISTS reviews (
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    hero_id INTEGER NOT NULL,
                    rating INTEGER NOT NULL CHECK(rating BETWEEN 1 AND 10),
-                   FOREIGN KEY (hero_id) REFERENCES heroes(id) 
+                   FOREIGN KEY (hero_id) REFERENCES heroes(id) ON DELETE CASCADE
                    )
                 ''')
     

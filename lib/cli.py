@@ -1,4 +1,7 @@
 # lib/cli.py
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from lib.models.heroes_model import Hero
 from lib.models.reviews_model import Review
@@ -27,9 +30,9 @@ def view_heroes():
     if heroes:
         for hero in heroes:
             print(f"ID: {hero.id}, Name: {hero.name}, Power: {hero.power}, Origin: {hero.origin}")
-            break
-        else:
-            print("No Heroes found.")
+    else:
+        print("No Heroes found.")
+
 
 def add_reviews():
     print("\n -- Add a Review for a Hero --")
@@ -71,4 +74,3 @@ def hero_cli():
 
 if __name__ == "__main__":
     hero_cli()
-
