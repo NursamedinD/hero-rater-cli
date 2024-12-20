@@ -1,11 +1,13 @@
 # lib/cli.py
 import sys
 import os
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from lib.models.heroes_model import Hero
 from lib.models.reviews_model import Review
 from lib.helpers import check_rating
+
 
 def main_menu():
     print("\n <--- Hero Rater CLI --->")
@@ -31,10 +33,11 @@ def view_heroes():
     heroes = Hero.get_all_heroes()
     if heroes:
         for hero in heroes:
-            print(f"ID: {hero.id}, Name: {hero.name}, Power: {hero.power}, Origin: {hero.origin}")
+            print(
+                f"ID: {hero.id}, Name: {hero.name}, Power: {hero.power}, Origin: {hero.origin}"
+            )
     else:
         print("No Heroes found.")
-
 
 def add_reviews():
     print("\n -- Add a Review for a Hero --")
@@ -50,7 +53,7 @@ def view_reviews():
     print("\n <- View all Reviews for a Hero")
     hero_id = input("Enter Hero's ID: ")
     reviews = Review.get_reviews_for_hero(hero_id)
-    if reviews:  
+    if reviews:
         print(f"Reviews for Hero ID {hero_id}:")
         for review in reviews:
             print(f"Rating: {review.rating}")
@@ -59,16 +62,19 @@ def view_reviews():
 
 def delete_hero():
     print("\n --Delete a Hero")
-    hero_id = input("Enter Hero ID to view Hero: ")
-    heroes = Hero.get_all_heroes(hero_id)
-    if heroes:
-        print(f"\n Heroes for Hero ID {hero_id}: ")
-        for hero in heroes:
-            hero_id = input("\n Enter Hero ID to delete: ")
-            Hero.delete_hero(hero_id)
-            break
-        else:
-            print(f"No Heroes found for Hero ID {hero_id}: ")
+    print("\nCurrent Heroes:")
+    heroes = Hero.get_all_heroes()
+    for hero in heroes:
+        print(f"ID: {hero.id}, Name: {hero.name}, Power: {hero.power}, Origin: {hero.origin}")
+    
+    hero_id = input("\nEnter Hero ID to delete: ")
+    hero = Hero.find_by_id(hero_id)
+    
+    if hero:
+        Hero.delete_hero(hero_id)
+        print(f"Hero with ID {hero_id} has been deleted.")
+    else:
+        print(f"No Hero found with ID {hero_id}")
 
 def delete_review():
     print("\n -- Delete a Review --")
@@ -82,7 +88,6 @@ def delete_review():
         Review.delete_review(review_id)
     else:
         print(f"No reviews found for Hero ID {hero_id}")
-
 
 
 def hero_cli():
