@@ -53,20 +53,22 @@ def view_reviews():
         else:
             print(f"No reviews found for Hero ID {hero_id}.")
 
-# def hero_cli():
-#     while True:
-#         choice = main_menu()
-#         if choice == "1":
-#             add_hero()
-#         elif choice == "2":
-#             view_heroes()
-#         elif choice == "3":
-#             add_reviews()
-#             elif choice
-
-
-
-
+def hero_cli():
+    while True:
+        choice = main_menu()
+        if choice == "1":
+            add_hero()
+        elif choice == "2":
+            view_heroes()
+        elif choice == "3":
+            add_reviews()
+        elif choice == "4":
+            view_reviews()
+        elif choice == "5":
+            print("Exiting...see you next time!")
+        else:
+            print("Invalid Choice. Please select a valid option.")
 
 if __name__ == "__main__":
-    main()
+    hero_cli()
+
