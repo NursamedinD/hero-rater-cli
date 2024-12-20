@@ -13,14 +13,14 @@ A simple rating app for superheroes and the like, by Nursamedin Abdi Dualle.
 # Run locally
 
 You will need a:
-- A laptop or computer
-- Stable internet
-- A web browser
+- A laptop or computer.
+- Stable internet.
+- A web browser.
 
 For the cloning process:
-- VS Code
-- Ubuntu
-- Understanding of Python, Sqlite
+- VS Code.
+- Ubuntu.
+- Understanding of Python, Sqlite.
 
 # Installation process
 
@@ -32,12 +32,12 @@ For the cloning process:
 
 `cd hero-rater-cli`
 
-3. Open it in VS Code, or your prefered code editor and run these commands
+3. Open it in VS Code, or your prefered code editor and run these commands:
 
 `pipenv install`
 `pipenv shell`
 
-Note: this will allow you test it in your local environment
+Note: this will allow you test it in your local environment.
 
 ## Running the CLI
 
