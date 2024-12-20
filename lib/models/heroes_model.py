@@ -1,5 +1,5 @@
 import sqlite3
-from lib import CURSOR, CONN, DATABASE_FILE  
+from lib import CURSOR, CONN 
 
 
 class Hero:

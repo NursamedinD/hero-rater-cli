@@ -13,8 +13,9 @@ def main_menu():
     print("2. View Heroes list")
     print("3. Add a review for a hero")
     print("4. View all reviews for heroes")
-    print("5. Exit")
-    return input("Type (1-5) to choose an option: ")
+    print("5. Delete a review")
+    print("6. Exit")
+    return input("Type (1-6) to choose an option: ")
 
 def add_hero():
     print("\n -- Add a new Hero --")
@@ -48,17 +49,31 @@ def view_reviews():
     print("\n <- View all Reviews for a Hero")
     hero_id = input("Enter Hero's ID: ")
     reviews = Review.get_reviews_for_hero(hero_id)
-    if reviews:
+    if reviews:  
         print(f"Reviews for Hero ID {hero_id}:")
         for review in reviews:
             print(f"Rating: {review.rating}")
-            break
-        else:
-            print(f"No reviews found for Hero ID {hero_id}.")
+    else:
+        print(f"No reviews found for Hero ID {hero_id}.")
+
+def delete_review():
+    print("\n -- Delete a Review --")
+    hero_id = input("Enter Hero ID to see their reviews: ")
+    reviews = Review.get_reviews_for_hero(hero_id)
+    if reviews:
+        print(f"\nReviews for Hero ID {hero_id}:")
+        for review in reviews:
+            print(f"Review ID: {review.id}, Rating: {review.rating}")
+        review_id = input("\nEnter Review ID to delete: ")
+        Review.delete_review(review_id)
+    else:
+        print(f"No reviews found for Hero ID {hero_id}")
+
+
 
 def hero_cli():
     while True:
-        choice = main_menu()
+        choice = input("Type (1-6) to choose an option: ")
         if choice == "1":
             add_hero()
         elif choice == "2":
@@ -68,9 +83,13 @@ def hero_cli():
         elif choice == "4":
             view_reviews()
         elif choice == "5":
+            delete_review()
+        elif choice == "6":
             print("Exiting...see you next time!")
+            break
         else:
             print("Invalid Choice. Please select a valid option.")
+
 
 if __name__ == "__main__":
     hero_cli()

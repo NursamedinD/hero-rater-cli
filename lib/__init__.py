@@ -12,6 +12,15 @@ CURSOR.execute("""
         origin TEXT
     )
 """)
+CURSOR.execute("""
+    CREATE TABLE IF NOT EXISTS reviews (
+        id INTEGER PRIMARY KEY,
+        hero_id INTEGER,
+        rating INTEGER,
+        FOREIGN KEY (hero_id) REFERENCES heroes (id) ON DELETE CASCADE
+    )
+""")
+
 CONN.commit()
 
 
